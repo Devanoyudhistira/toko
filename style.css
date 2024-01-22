@@ -1,0 +1,753 @@
+@font-face {
+    font-family: 'montserratblack';
+    src: url('montserrat-black-webfont.woff2') format('woff2'),
+         url('font/monsterat/montserrat-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratregular';
+    src: url('font/monsterat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratlight';
+    src: url('montserrat-light-webfont.woff2') format('woff2'),
+         url('font/monsterat/montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+*{margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #ddd;
+}
+
+.container{
+  position: relative;
+}
+header{
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #ddd;
+  display: grid;
+  justify-items:center ;
+  background-color: rgba(210,210,210,.5);
+  box-shadow: 3px 3px 5px rgba(0,0,0,.8)
+}
+div.biodata{
+  font-family:montserratblack;
+  font-size: 1.2rem;
+  width: calc(50% + 50px);
+  height: auto;
+}
+.navbar{
+  width: 550px;
+  height: 0px;
+  background-color: rgba(200,200,200,.95);
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  top:30%;
+  left: 22%;
+  z-index: 50;
+  border-radius: 20px;
+  padding: 0px 20px 0 0;
+  opacity: 0;
+  transition: 500ms;
+padding-top: 20px;}
+span.close{
+  color:red;
+  font-family: montserratblack
+}
+.navbar h3{
+  position: absolute;
+  top: 20px;
+  padding-bottom: 10px;
+}
+div.fitur{
+  width: 100%;
+  height: max-content;
+  background-color: rgba(190,190,190,.8);
+  top: 15%;
+  left: 50%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+div .fituricon{
+  width: 55px;
+  height: 55px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  font-family: montserratblack;
+  color: rgb(90,90,90);
+  position: relative;
+}
+div.history{
+  background-image: url(photo/icon/file.png);
+}
+div.history::after{
+  content: 'history';
+  position: absolute;
+  padding-left: 13px;
+  left: 50px;
+  top: 10px;
+  font-size: 20px;
+}
+
+div.wishlist{
+  background-image: url(photo/icon/wishlist.png);
+}
+div.wishlist::after{
+  content: 'wishlist';
+  position: absolute;
+  padding-left: 13px;
+  left: 50px;
+  top: 10px;
+  font-size: 20px;
+}
+div.setting{
+  background-image: url(photo/icon/settings.png);
+}
+div.setting::after{
+  content: 'setting';
+  position: absolute;
+  padding-left: 13px;
+  left: 50px;
+  top: 10px;
+  font-size: 20px;}
+div.help{
+  background-image: url(photo/icon/information.png);
+}
+div.help::after{
+  content: 'help';
+  position: absolute;
+  padding-left: 13px;
+  left: 50px;
+  top: 10px;
+  font-size: 20px;}
+.nav1{
+  opacity: 1;
+  height: 370px;
+  z-index: 50;
+}
+.maximize{
+  background-image: url(photo/icon/maximize.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  position: absolute;
+  right: 16.5px;
+  top: 5px;
+  display: none;
+}
+span.close{
+  display: flex;
+  justify-content: center;
+  display: block;
+  width: 1.5em;
+  position: absolute;
+  font-size: 25px;
+  left: 5px;
+  top: 5px;
+}
+.navbar div.imageprofile{
+  width: 60%;
+  height: 90%;
+  margin-top: 20px;
+  margin-left: 5px;
+  background-image: url(photo/icon/contact.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navbar img{
+  object-fit: cover;
+  margin-left: 50%;
+}
+header input 
+{ position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 1;
+  opacity: 0;
+  justify-self: right;
+}
+header .logo 
+{ position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-top: 2.5px;
+  background-image:url(photo/icon/contact.png);
+  background-size: cover;
+  z-index: 2;
+  justify-self: right;
+}
+header .logo::after{
+  content: 'devano yudhistira';
+  display: inline-block;
+  font-family: montserratblack;
+  font-size: 14px;
+  position: absolute;
+  top : 3px;
+  right:1%;
+  z-index: -5;
+  width: max-content;
+  border-top-left-radius:10px;
+  background-color: rgba(200,200,200.8);
+  transition: 200ms;
+  transform:translatey(8px);
+  opacity: 0;
+  letter-spacing: .1px;
+  
+}
+header .logo:hover::after{
+  transform:translatex(-60px);
+  top : 11px;
+  opacity: 1;
+}
+header span{
+  color: rgb(30,30,30);
+  justify-self: center;
+  position: absolute;
+  font-family: montserratregular;
+  font-weight: bold;
+  font-size: 1.5rem;
+  align-self: center;
+}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width:100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+/* Caption text */
+.text{
+  color: #f2f2f2;
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-family: montserratblack;
+}
+div.text{
+  animation: fade 2s;
+  transition: 2500ms;
+}
+div.text-1{
+  width: min-content;
+  top: 10%;
+  left: 20px;
+  font-size: 4.2rem;
+}
+div.text-2{ 
+  width: min-content;
+  top: 10%;
+  right: 10px;
+  font-size: 4.2rem;
+}
+div.text-3{
+  top: 0;
+  left: 22%;
+  font-size: 4rem;
+}
+div.text-4{
+  font-size: 4.2rem;
+  top: 5%
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+ div img{width:100%;
+   height:300px;
+   object-fit:fill;
+ position: relative}
+
+/* The dots/bullets/indicators */
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  transition: 2s;
+}
+
+
+div.title-car{
+  margin-top: -25px;
+  text-align: center;
+  background-color: rgba(222,222,222,.6);
+  box-shadow:0px 0px 10px rgba(0,0,0,.8);
+}
+div.title-car h1{
+  color: rgb(70,70,90);
+  font-family: montserratlight;
+  font-variant:small-caps;
+  font-size: 3rem
+}
+.filter{
+  display: grid;
+  flex-direction: column;
+  justify-items: center;
+  position: relative;
+  height: 70px;
+}
+.filter button{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  border: none;
+  z-index: 13;
+  overflow: hidden;
+  margin-right: 70px;
+}
+.filter button:focus{
+  overflow: visible;
+}
+.filter button::before{
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-image:url(photo/icon/sedan.png);
+  background-size: cover;
+  position: absolute;
+  top:1px;
+  left: 1px;
+  transition: 600ms
+}
+.filter button::after{
+  content: 'car';
+  opacity: 0;
+  position: absolute;
+  font-family: montserratblack;
+  font-size: 18px;
+  right: -11px;
+  top: 16px;
+  transition: 650ms;
+}
+.filter button:focus::after{
+  opacity: 1
+}
+.filter button:focus::before{
+  transform: translatex(-30px);
+  transition: 500ms
+}
+.filter button:focus + div{
+  height: 60px;
+  width: 120px;
+  border-radius: 30px;
+}
+.filter div{
+  width: 60px;
+  height: 60px;
+  background-color: rgba(214,214,220,.8);
+  box-shadow: 0px 0px 5px rgba(150,150,150,.8);
+  position: absolute;
+  border-radius: 50%;
+  transition: all 500ms;
+  display: flex;
+  margin-right: 70px;
+}
+.filter button.car1{
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  margin-left: 180px;
+}
+.filter button.car1::before{
+  background-image:url(photo/icon/piston1.png);
+}
+.filter button.car1::after{
+  content: 'tools';
+  left: 25px;
+}
+.filter div.engine1{
+  position: absolute;
+  margin-left: 180px
+}
+main{
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  background-color: rgba(222,222,222,.8);
+  display: flex;
+  flex-direction: column;
+  transition: 2000ms
+}
+main.toko{
+  height: 600px;
+}
+section.carshop{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}
+section.toolshop{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  padding-bottom: 20px;
+  opacity: 1;
+}
+main section div.item{
+  width: 200px;
+  height: 240px;
+  margin-top: 5px;
+  margin-bottom: 1px;
+  background-color: rgba(220,220,223,1);
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,.8)) ;
+  border-radius: 10px;
+  display: grid;
+  place-items: end start;
+  padding-top: 5px;
+  padding-left: 12px;
+}
+.item .image{
+  width: 90%;
+  height: 90px;
+  background-color: blanchedalmond;
+  margin-top: -20px;
+  margin-left: 5px;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(30,30,30,.8)
+}
+
+.item .img1{
+   background-image: url(photo/content/car-4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.more{
+  width: 650px;
+  height: 350px;
+  background-color: rgba(210,210,215,.89);
+  transform: scaleY(0);
+  transition: 500ms;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  z-index: 99;
+  display: grid;
+  grid-template-areas:
+  "hero nama"
+  "hero deskripsi"
+  "hero deskripsi";
+}
+.move{
+transform: scaleY(1);
+}
+.hero{width: 300px;
+  height: 330px;
+  background-color: royalblue;
+  grid-area: hero;
+}
+.nama{grid-area: nama;
+  font-size: 2rem
+}
+.review{width: 350px;
+  height: 280px;
+  background-color: orange;
+  grid-area: deskripsi;}
+
+.item .img2{
+   background-image: url(photo/content/car-5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .img3{
+   background-image: url(photo/content/car-1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .img4{
+   background-image: url(photo/content/car-3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .img5{
+   background-image: url(photo/content/car-2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .img6{
+   background-image: url(photo/content/car-6.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .tool1{
+   background-image: url(photo/content/sparepart-1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .tool2{
+   background-image: url(photo/content/sparepart-4.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+.item .tool3{
+   background-image: url(photo/content/sparepart-2.webp);
+  background-position: center;
+  background-size: cover;
+}
+.item .tool4{
+   background-image: url(photo/content/sparepart-3.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+.item .tool5{
+   background-image: url(photo/content/sparepart-5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.item .rating ul{
+  list-style: none;
+  margin-bottom: 50px;
+  font-family: montserratblack;
+  font-size:.7rem;
+}
+.item .rating ul li{
+  margin-bottom: 10px;
+}
+.item .rating ul li:nth-child(1){
+  margin-left: -25px;
+  position: relative;
+}
+.item .rating ul li:nth-child(1)::after{
+  content: '';
+  display: block;
+  width: 0px;
+  height: px;
+  background-color: rgba(35,35,35,1);
+  position: absolute;
+  top: 5px;
+  right: -55px;
+}
+.item .rating ul li:nth-child(2){
+  margin-left: -10px;
+}
+.item .rating ul li:nth-child(3){
+  margin-left: -34px;
+}
+.item .rating ul li:nth-child(4){
+  margin-left: -29px;
+}
+button.view{
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  margin-left: 30px;
+  border-radius: 5px;
+  background-color: rgba(150,150,150,.3);
+  border: solid rgb(90,90,90) 1px;
+}
+
+
+
+
+
+
+
+
+
+/* media querys */
+@media only screen and (max-width: 600px) {
+   div img{width:100%;
+           height:160px;
+           object-fit:fill;}
+  div.text{
+  color: #f2f2f2;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-family: montserratblack;
+}
+div.text-1{
+  width: min-content;
+  top: 10%;
+  left: 20px;
+}
+  .navbar{
+    display: flex;
+    width: 80vw;
+    height: 0;
+    flex-direction: column;
+    padding: 5px;
+    top: 3%;
+    opacity: 0;
+    left: 10%;
+  }
+  div.maximize{display: block}
+  .close{
+    font-family: montserratregular;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 10px;
+    left: l0px;
+    z-index: 100;}
+  .nav1{
+    height: 100vh;
+    opacity: 1;
+    z-index: 999;}
+  .navmax{
+    width: 100vw;
+    left: 0;
+    top: 0;
+  }
+  .navbar div.imageprofile{
+    position: absolute;
+    top: 0%;
+    left: 28px;
+    width: 80%;
+    height: 270px;
+  }
+   .navbar h3{
+     position: absolute;
+     top: 0;
+     left: -20px;
+     width: auto;
+     transition: 500ms;
+   }
+  h3.besar{ width: max-content;
+  }
+  div.biodata{
+    position: absolute;
+    width: max-content;
+    top: 300px;
+    font-size: 1.5rem;
+    left: 13%;
+  }
+  div.fitur{
+  width: 89%;
+  height: max-content;
+  top: calc(55% - 35px);
+  position: absolute;
+    border-radius: 30px 25px 25px;
+    left:.7em;
+    padding: 10px 10px 20px 10px;
+}
+div .fituricon{
+  width: 39px;
+  height:39px;
+  justify-content: space-evenly;
+  column-gap: 20px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5px;
+}
+div.history{
+  background-image: url(photo/icon/file.png);
+}
+  
+div.wishlist{
+  background-image: url(photo/icon/wishlist.png);
+}
+div.setting{
+  background-image: url(photo/icon/settings.png);
+}
+div.help{
+  background-image: url(photo/icon/information.png);
+}
+div.text-2{ 
+  width: min-content;
+  top: 10%;
+  right: 10px;
+}
+div.text-3{
+  width: max-content;
+  top: 0;
+  left: 18%;
+}
+div.text-4{
+  top: 5%
+}
+  div.title-car h1{
+  font-family: montserratlight;
+  font-variant:small-caps;
+  font-size: 1.4rem
+}
+  header .logo::after{
+    right: 1%;
+    top: 10px;
+    opacity: 0;
+    display: none;
+  }
+  main{
+    height: 0px;
+  }
+  main.toko{
+    height: 340px;
+  }
+  section.carshop{
+    grid-template-columns: max-content max-content max-content;
+    column-gap: 5px;
+    row-gap:  18px;
+  padding-bottom: 20px;}
+  main section div.item{
+    width: 100px;
+    height: 135px;
+    border-radius: 10px;
+    margin-bottom: -100px;
+}
+  .item .image{
+    width: 90px;
+    height: 53px;
+    margin-left: -4px;
+  }
+  .item .rating ul{
+    font-family: montserratlight ;
+   font-size: 1px; 
+    margin-bottom: 25px;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+  }
+  .rating ul li{
+    margin-top: -6px;
+  }
+  .rating ul li:nth-child(2){
+    margin-right: 8px;
+  }
+  
+  button.view{
+    align-items: center;
+     margin-left: 15px;
+     margin-bottom: 50px;
+  }
+}
